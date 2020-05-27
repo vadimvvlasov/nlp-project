@@ -1,6 +1,6 @@
 # huawei-university/nlp-course-projects
 # Generating headlines of news articles in Russian with sequence to sequence network and attention
-## Vadim Vlasov 
+## Vadim Vlasov
 ## May 2020
 
 ### Abstract
@@ -25,7 +25,13 @@ With the Attention Model we can improve the ability of neural network to memoriz
 #### Transformer Model and transformer-based approaches
 
 ## 3	Model Description
+Encoder network
 
+![encoder-network](img/encoder-network.png)
+
+Attention decoder network
+
+![attention-decoder-network](img/attention-decoder-network.png)
 
 ## 4	Dataset
 Dataset under the project contains the first 1000 news documents from the full dataset. The dataset available for the research purposes here [https://github.com/RossiyaSegodnya/ria_news_dataset]
@@ -37,7 +43,7 @@ Each text in the data set contains HTML tags, so a pre-processing of texts is re
 - split the texts, so have each word in it.
 
 After preprocessing, the longest article has 20097 tokens. At the same time, 87.7% of texts contain less than 300 tokens. The distribution of words in the dataset texts is shown in the figure below
-
+![Word length distributions for articles and headlines](img/tokens_distribution.png)
 Table 1: Statistics of first 1000 news documents from the dataset ria_news_dataset
 
 ## 5	Experiments
@@ -60,10 +66,10 @@ Trained model has 1 layer GRU with 256 hidden size in encoder and decoder. Hyper
 According to [] state of the art solution shows the following score
 
 ## 6	Results
-
+![](img/attention_visualisation.png)
 ## 7	Conclusion
 In this work RIA dataset was pre-processing and trimmed so that the texts do not contain non-symbols and its size limited by the maximum value.
-The sequence of sequence with attention approach applied to machine translation was adapted to the generation of article headlines.
+The sequence to sequence with attention approach applied to machine translation was adapted to the generation of article headlines.
 
 Future work
 
@@ -73,6 +79,6 @@ Future work
 - use newer transformer-based approaches
 
 ## References
-1.	Daniil Gavrilov, Pavel Kalaidin, and Valentin Malykh. Self-Attentive Model for Headline Generation. 41st European Conference on Information Retrieval, 2019. arXiv:1901.07786 
+1.	Daniil Gavrilov, Pavel Kalaidin, and Valentin Malykh. Self-Attentive Model for Headline Generation. 41st European Conference on Information Retrieval, 2019. arXiv:1901.07786
 2.	"Rossiya Segodnya" news dataset. https://github.com/RossiyaSegodnya/ria_news_dataset
 3.	Nlp from scratch: Translation with a sequence to sequence network and attention. https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html
